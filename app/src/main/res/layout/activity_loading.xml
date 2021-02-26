@@ -7,10 +7,11 @@
     tools:context=".LoadingActivity">
 
     <ProgressBar
-        android:id="@+id/progressBar"
+        android:id="@+id/thinking_pb"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="184dp"
         android:layout_height="44dp"
+        android:indeterminate="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

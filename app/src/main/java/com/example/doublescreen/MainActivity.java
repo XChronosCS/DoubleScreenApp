@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.Timer;
+
 public class MainActivity extends AppCompatActivity {
 
     private Button mBtLaunchActivity;
@@ -17,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mBtLaunchActivity = (Button) findViewById(R.id.button_swap_page);
-
         mBtLaunchActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -29,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void launchActivity() {
 
-        Intent intent = new Intent(this, SecondActivity.class);
+
+        Intent intent = new Intent(this, LoadingActivity.class);
         startActivity(intent);
     }
 }

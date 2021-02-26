@@ -6,12 +6,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import java.util.Random;
 
 public class SecondActivity extends AppCompatActivity {
 
     private Button mBtGoBack;
+
+    private TextView woopThought;
 
     public enum Thoughts {
         A("Down with the Patriarchy!"), B("Woop!"), C("Water is Wet!"), D("Gen 4 Remakes when?"),
@@ -40,6 +45,8 @@ public class SecondActivity extends AppCompatActivity {
 
 
         mBtGoBack = (Button) findViewById(R.id.button_Go_back);
+        woopThought = (TextView) findViewById(R.id.woop_thought);
+        woopThought.setText(Thoughts.getRandomThought().label);
 
         mBtGoBack.setOnClickListener(new View.OnClickListener() {
             @Override

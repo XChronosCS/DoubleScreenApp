@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:actionBarNavMode="standard"
+    android:background = "@drawable/waterbackground"
     tools:context=".SecondActivity">
 
     <Button
@@ -23,37 +24,59 @@
         android:id="@+id/imageView2"
         android:layout_width="147dp"
         android:layout_height="150dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/button_Go_back"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.14"
+        app:layout_constraintHorizontal_bias="0.06"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/wooper"
-        tools:layout_editor_absoluteY="319dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.84"
+        app:srcCompat="@drawable/wooper" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="269dp"
-        android:layout_height="34dp"
-        android:layout_marginTop="57dp"
+        android:layout_width="261dp"
+        android:layout_height="33dp"
         android:layout_marginBottom="242dp"
         android:fontFamily="@font/chewy"
         android:gravity="center"
         android:text="Wooper is thinking..."
         android:textColor="#F44336"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.413"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        tools:layout_editor_absoluteX="71dp" />
+        app:layout_constraintVertical_bias="0.117" />
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="284dp"
         android:layout_height="332dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
         android:scaleX="-1"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/thoughtbubblewhite"
-        tools:layout_editor_absoluteY="52dp" />
+        app:layout_constraintHorizontal_bias="0.874"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2"
+        app:srcCompat="@drawable/thoughtbubblewhite" />
+
+    <TextView
+        android:id="@+id/woop_thought"
+        android:layout_width="163dp"
+        android:layout_height="109dp"
+        android:fontFamily="@font/chewy"
+        android:gravity="center"
+        android:text="Sample Text"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.691"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.268" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
