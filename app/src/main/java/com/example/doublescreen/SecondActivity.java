@@ -1,22 +1,46 @@
 package com.example.doublescreen;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Random;
 
 public class SecondActivity extends AppCompatActivity {
 
-    private Button mBtGoBack;
+    private Button goBack;
 
     private TextView woopThought;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_second);
+
+
+        goBack = (Button) findViewById(R.id.button_Go_back);
+        woopThought = (TextView) findViewById(R.id.woop_thought);
+        woopThought.setText(Thoughts.getRandomThought().label);
+
+        goBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                launchActivity();
+            }
+        });
+    }
+
+    private void launchActivity() {
+
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
 
     public enum Thoughts {
         A("Down with the Patriarchy!"), B("Woop!"), C("Water is Wet!"), D("Gen 4 Remakes when?"),
@@ -28,7 +52,7 @@ public class SecondActivity extends AppCompatActivity {
 
         public final String label;
 
-        private Thoughts(String label){
+        Thoughts(String label) {
             this.label = label;
         }
 
@@ -36,32 +60,5 @@ public class SecondActivity extends AppCompatActivity {
             Random random = new Random();
             return values()[random.nextInt(values().length)];
         }
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_second);
-
-
-        mBtGoBack = (Button) findViewById(R.id.button_Go_back);
-        woopThought = (TextView) findViewById(R.id.woop_thought);
-        woopThought.setText(Thoughts.getRandomThought().label);
-
-        mBtGoBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                launchActivity();
-            }
-        });
-    }
-
-
-
-    private void launchActivity() {
-
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
     }
 }

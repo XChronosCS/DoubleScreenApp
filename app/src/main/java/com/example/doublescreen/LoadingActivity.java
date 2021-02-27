@@ -1,23 +1,17 @@
 package com.example.doublescreen;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.View;
 import android.widget.ProgressBar;
 
-import java.util.Timer;
-import java.util.TimerTask;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class LoadingActivity extends AppCompatActivity {
     private ProgressBar thinkingProgressBar;
-    private int mProgressStatus = 0;
-    private Handler mHandler = new Handler();
+    private int numProgress = 0;
+    private final Handler myHandler = new Handler();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,21 +20,21 @@ public class LoadingActivity extends AppCompatActivity {
         barProgress();
     }
 
-    public void barProgress(){
+    public void barProgress() {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                while (mProgressStatus < 100) {
-                    mProgressStatus++;
+                while (numProgress < 100) {
+                    numProgress++;
                     android.os.SystemClock.sleep(15);
-                    mHandler.post(new Runnable() {
+                    myHandler.post(new Runnable() {
                         @Override
                         public void run() {
-                            thinkingProgressBar.setProgress(mProgressStatus);
+                            thinkingProgressBar.setProgress(numProgress);
                         }
                     });
                 }
-                if(mProgressStatus == 100){
+                if (numProgress == 100) {
                     launchActivity();
                 }
             }
