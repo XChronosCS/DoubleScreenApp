@@ -4,16 +4,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background = "@drawable/waterbackground"
     tools:context=".LoadingActivity">
 
     <ProgressBar
         android:id="@+id/thinking_pb"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="184dp"
-        android:layout_height="44dp"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="290dp"
+        android:layout_height="75dp"
+        android:background="#00DA0F0F"
         android:indeterminate="false"
+        android:indeterminateDrawable="@color/hot_pink"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="264dp"
+        android:layout_height="61dp"
+        android:layout_marginBottom="242dp"
+        android:fontFamily="@font/chewy"
+        android:gravity="center"
+        android:text="Translating Wooper Thoughts"
+        android:textColor="#F44336"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.276" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="261dp"
+        android:layout_height="33dp"
+        android:layout_marginBottom="242dp"
+        android:fontFamily="@font/chewy"
+        android:gravity="center"
+        android:text="Please Wait..."
+        android:textColor="#F44336"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.612" />
 </androidx.constraintlayout.widget.ConstraintLayout>
